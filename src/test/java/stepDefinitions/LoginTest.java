@@ -1,18 +1,13 @@
 package stepDefinitions;
 
 import static org.testng.Assert.assertEquals;
-
-import java.util.concurrent.TimeUnit;
-
+import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.messages.internal.com.google.protobuf.Duration;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LoginTest {
@@ -25,7 +20,7 @@ public class LoginTest {
 	    System.setProperty("webdriver.chrome.driver", "V:\\New Chrome Drivers\\chromedriver.exe");
 	    driver=new ChromeDriver();
 	    driver.manage().window().maximize();
-	    driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	
 	}
 	@Given("I want to load the URL")
